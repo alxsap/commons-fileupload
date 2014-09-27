@@ -166,11 +166,6 @@
     </contributor>
   </contributors>
 
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/commons/proper/fileupload/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/fileupload/trunk</developerConnection>
-    <url>http://svn.apache.org/viewvc/commons/proper/fileupload/trunk</url>
-  </scm>
   <issueManagement>
     <system>jira</system>
     <url>http://issues.apache.org/jira/browse/FILEUPLOAD</url>
@@ -295,4 +290,16 @@
     </plugins>
   </reporting>
 
+  <distributionManagement>
+    <repository>
+      <id>maven.jenkins-ci.org</id>
+      <url>http://maven.jenkins-ci.org:8081/content/repositories/releases</url>
+    </repository>
+  </distributionManagement>
+
+  <scm>
+    <connection>scm:git:git://github.com/jenkinsci/commons-fileupload.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/commons-fileupload.git</developerConnection>
+    <url>http://github.com/jenkinsci/commons-fileupload</url>
+  </scm>
 </project>
