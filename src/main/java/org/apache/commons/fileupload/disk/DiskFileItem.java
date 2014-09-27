@@ -651,57 +651,6 @@ public class DiskFileItem
     }
 
     /**
-     * Reads the state of this object during deserialization.
-     *
-     * @param in The stream from which the state should be read.
-     *
-     * @throws IOException if an error occurs.
-     * @throws ClassNotFoundException if class cannot be found.
-     */
-    private void readObject(ObjectInputStream in)
-            throws IOException, ClassNotFoundException {
-        if (!Boolean.getBoolean(SERIALIZABLE_PROPERTY)) {
-            throw new IllegalStateException("Property " + SERIALIZABLE_PROPERTY
-                    + " is not true, rejecting to deserialize a DiskFileItem.");
-        }
-        // read values
-        in.defaultReadObject();
-
-        /* One expected use of serialization is to migrate HTTP sessions
-         * containing a DiskFileItem between JVMs. Particularly if the JVMs are
-         * on different machines It is possible that the repository location is
-         * not valid so validate it.
-         */
-        if (repository != null) {
-            if (repository.isDirectory()) {
-                // Check path for nulls
-                if (repository.getPath().contains("\0")) {
-                    throw new IOException(format(
-                            "The repository [%s] contains a null character",
-                            repository.getPath()));
-                }
-            } else {
-                throw new IOException(format(
-                        "The repository [%s] is not a directory",
-                        repository.getAbsolutePath()));
-            }
-        }
-
-        OutputStream output = getOutputStream();
-        if (cachedContent != null) {
-            output.write(cachedContent);
-        } else {
-            FileInputStream input = new FileInputStream(dfosFile);
-            IOUtils.copy(input, output);
-            dfosFile.delete();
-            dfosFile = null;
-        }
-        output.close();
-
-        cachedContent = null;
-    }
-
-    /**
      * Returns the file item headers.
      * @return The file items headers.
      */

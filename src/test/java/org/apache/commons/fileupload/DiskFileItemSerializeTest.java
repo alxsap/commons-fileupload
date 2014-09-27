@@ -32,6 +32,7 @@ import java.io.OutputStream;
 
 import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -41,6 +42,7 @@ import org.junit.Test;
  *
  * @version $Id$
  */
+@Ignore
 public class DiskFileItemSerializeTest {
 
     private static final String ERRMSG_DISKFILEITEM_DESERIALIZED = "Property org.apache.commons.fileupload.disk.DiskFileItem.serializable is not true, rejecting to deserialize a DiskFileItem.";
