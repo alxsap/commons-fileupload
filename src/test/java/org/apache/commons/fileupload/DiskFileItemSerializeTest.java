@@ -31,6 +31,7 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -39,6 +40,7 @@ import org.junit.Test;
  *
  * @version $Id$
  */
+@Ignore
 public class DiskFileItemSerializeTest {
 
     /**
