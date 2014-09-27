@@ -26,7 +26,7 @@
 
   <groupId>commons-fileupload</groupId>
   <artifactId>commons-fileupload</artifactId>
-  <version>1.3.3-jenkins-1</version>
+  <version>1.3.3-jenkins-2-SNAPSHOT</version>
 
   <name>Apache Commons FileUpload</name>
   <description>
@@ -341,6 +341,6 @@
     <connection>scm:git:git://github.com/jenkinsci/commons-fileupload.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/commons-fileupload.git</developerConnection>
     <url>http://github.com/jenkinsci/commons-fileupload</url>
-    <tag>commons-fileupload-1.3.1-jenkins-1</tag>
+    <tag>HEAD</tag>
   </scm>
 </project>
