@@ -211,6 +211,7 @@
     </dependency>
   </dependencies>
 
+  <!-- Extra artifacts disabled for Jenkins build:
   <build>
     <plugins>
       <plugin>
@@ -232,6 +233,7 @@
       </plugin>
     </plugins>
   </build>
+  -->
 
   <reporting>
     <plugins>
@@ -293,7 +295,7 @@
   <distributionManagement>
     <repository>
       <id>maven.jenkins-ci.org</id>
-      <url>http://maven.jenkins-ci.org:8081/content/repositories/releases</url>
+      <url>https://repo.jenkins-ci.org/releases/</url>
     </repository>
   </distributionManagement>
 
